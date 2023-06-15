@@ -1,25 +1,25 @@
 # nitrado-testaufgabe
 
-This template should help get you started developing with Vue 3 in Vite.
+Testaufgabe von Philipp Seibold.
+Landingpage für das neue Spiel Star Wars Battlefront 3.
 
-## Recommended IDE Setup
+## Bestandteile
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+### Navigationsbereich
 
-## Type Support for `.vue` Imports in TS
+Navigationsbereich mit Logo und Dropdown-Komponente. Dropdown soll den eingeloggten Zustand eines Users simulieren. Es wird der Avatar des Users angezeigt. Per Klick öffnet sich das Dropdown mit einer Dummy-Auswahl an Möglichkeiten.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+### Headerbereich
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+Der Headerbereich besteht aus einem großen Promobild des Spiels. Auf diesem ist der Titel des Spiels, sowie eine Unterzeile abgebildet. Ein Call-To-Action Button leitet den User zur Serverauswahl.
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+### Serverauswahl
 
-## Customize configuration
+Der Hauptbereich der App. Hier befindet sich die Tab-Komponente. Es kann zwischen verschiedenen Optionen gewählt werden. Per Default sind drei Auswahlmöglichkeiten vorhanden. Die erste Option ist standardmäßig ausgewählt. In der Tab-Komponente findet der Api-Aufruf für die Accordion-Komponente statt. Inhaltlich sind in jedem Tab Preis, Location und weitere Infos des Servers vorhanden, sowie die Accordion-Komponente mit den Daten der Tab-spezifischen API. Auch hier befindet sich ein Call-To-Action-Button zur Auswahl des Servers.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+Die verschiedenen Bilder der Tabs sollen die verschiedenen Stufen der Server darstellen.
+
+### Header
 
 ## Project Setup
 

@@ -37,14 +37,14 @@ export default defineComponent({
     <div
       v-for="(item, index) in items"
       :key="index"
-      class="accordion-item"
+      class="accordion_item"
       :class="{ active: activeItem === index, inactive: activeItem !== index }"
     >
-      <div class="accordion-header" @click="toggleItem(index)">
+      <div class="accordion_header" @click="toggleItem(index)">
         {{ item.title }}
       </div>
       <div
-        class="accordion-content"
+        class="accordion_content"
         v-show="activeItem === index"
         :class="{ active: activeItem === index, inactive: activeItem !== index }"
       >
@@ -58,29 +58,34 @@ export default defineComponent({
 .accordion {
   margin-bottom: 2em;
   border-radius: 20px;
-  background: #fff;
-  color: black;
-  width: 100%;
+  color: white;
+  width: 75%;
 }
 
-.accordion-item:nth-of-type(1),
-.accordion-item:nth-of-type(2) {
-  border-bottom: 1px solid black;
+.accordion_item:nth-of-type(2),
+.accordion_item:nth-of-type(3) {
+  border-top: 1px solid white;
 }
 
-.accordion-item.active .accordion-header {
+.accordion_item:nth-of-type(2).active,
+.accordion_item:nth-of-type(3).active {
+  border-top: 1px solid transparent;
+}
+
+.accordion_item.active .accordion_header {
   background-color: rgba(255, 47, 0, 0.9);
   color: #fff;
+  border-radius: 10px;
 }
 
-.accordion-header {
-  padding: 1em;
+.accordion_header {
+  padding: 1em 1em 1em 3em;
   cursor: pointer;
   transition: all 0.5s ease-out;
   position: relative;
 }
 
-.accordion-header:after {
+.accordion_header:after {
   content: '';
   position: absolute;
   height: 10px;
@@ -88,31 +93,28 @@ export default defineComponent({
   top: 0;
   bottom: 0;
   margin: auto;
-  right: 1em;
-  border-right: 3px solid black;
-  border-bottom: 3px solid black;
-  transform: rotate(45deg);
-  transition: transform 0.25s ease-out;
-}
-
-.accordion-item.active .accordion-header:after {
+  left: 1em;
   border-right: 3px solid white;
   border-bottom: 3px solid white;
-  transform: rotate(-135deg);
-  top: 0.5em;
+  transform: rotate(-45deg);
+  transition: transform 0.5s ease-out;
+}
+
+.accordion_item.active .accordion_header:after {
+  transform: rotate(45deg);
 }
 
 .accordion-icon.open {
   transform: rotate(180deg);
 }
 
-.accordion-content {
+.accordion_content {
   padding: 1em;
   overflow: hidden;
   transition: all 1s ease-out;
 }
 
-.accordion-content.active {
+.accordion_content.active {
   max-height: 300px;
   transition: all 0.5s ease-out;
 }

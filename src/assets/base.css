@@ -3,3 +3,35 @@ body {
   padding: 0;
   margin: 0;
 }
+
+@font-face {
+  font-family: 'Thiccboi';
+  src: url('/fonts/Thiccboi-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Thiccboi';
+  src: url('/fonts/Thiccboi-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Thicbcboi';
+  src: url('/fonts/Thiccboi-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Starjedi';
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto;
+  src: url('/fonts/Starjedi.ttf') format('truetype');
+}

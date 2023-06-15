@@ -1,14 +1,21 @@
 @import './base.css';
 
 #app {
-  font-weight: normal;
-  font-family: 'Roboto', sans-serif;
   /*cursor: url(./images/lightsaber_red.png), default;*/
+  font-family: 'Thiccboi', sans-serif;
+  font-weight: 500;
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-family: 'Starjedi';
+}
+
+h2 {
+  color: #fff;
+  margin-bottom: 2em;
+  text-align: center;
 }
 
 .container {
@@ -37,6 +44,14 @@ h2 {
 
 .call_to:hover {
   cursor: pointer;
+}
+
+.logo_link svg {
+  height: 3em;
+  width: auto;
+  fill: white;
+  position: relative;
+  z-index: 9;
 }
 
 @keyframes glow {

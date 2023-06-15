@@ -1,3 +1,12 @@
+<script setup lang="ts">
+const scrollTo = (selector: string) => {
+  const el = document.getElementById(selector)
+  if (el != null) {
+    el.scrollIntoView({ behavior: 'smooth' })
+  }
+}
+</script>
+
 <template>
   <header>
     <div class="container">
@@ -11,15 +20,6 @@
     </div>
   </header>
 </template>
-
-<script setup lang="ts">
-const scrollTo = (selector: string) => {
-  const el = document.getElementById(selector)
-  if (el != null) {
-    el.scrollIntoView({ behavior: 'smooth' })
-  }
-}
-</script>
 
 <style scoped>
 header {

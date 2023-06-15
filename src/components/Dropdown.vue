@@ -1,18 +1,3 @@
-<template>
-  <div class="dropdown">
-    <button class="dropdown-toggle" @click="toggleDropdown">
-      <span class="avatar"></span>
-    </button>
-    <Transition name="slide-fade">
-      <ul v-show="isOpen" class="dropdown-menu">
-        <li v-for="(option, index) in options" :key="index" @click="selectOption(option)">
-          {{ option.title }}
-        </li>
-      </ul>
-    </Transition>
-  </div>
-</template>
-
 <script lang="ts">
 import { ref, defineComponent } from 'vue'
 
@@ -47,6 +32,21 @@ export default defineComponent({
   }
 })
 </script>
+
+<template>
+  <div class="dropdown">
+    <button class="dropdown-toggle" @click="toggleDropdown">
+      <span class="avatar"></span>
+    </button>
+    <Transition name="slide-fade">
+      <ul v-show="isOpen" class="dropdown-menu">
+        <li v-for="(option, index) in options" :key="index" @click="selectOption(option)">
+          {{ option.title }}
+        </li>
+      </ul>
+    </Transition>
+  </div>
+</template>
 
 <style scoped>
 .avatar {

@@ -69,12 +69,12 @@ export default defineComponent({
           </g>
         </svg>
       </a>
-      <dropdown :options="dropdownOptions" />
+      <Dropdown :options="dropdownOptions" />
     </div>
   </nav>
 </template>
 
-<style>
+<style scoped>
 nav {
   background: black;
   position: relative;
@@ -105,13 +105,5 @@ nav .container {
   width: 2.5em;
   background: black;
   transform: rotate(45deg) skew(-3deg, -3deg);
-}
-
-.logo_link svg {
-  height: 3em;
-  width: auto;
-  fill: white;
-  position: relative;
-  z-index: 9;
 }
 </style>
