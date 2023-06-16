@@ -125,6 +125,7 @@ p {
   text-align: center;
   line-height: 1.5em;
   list-style: none;
+  padding: 0;
 }
 
 .attribute h3 {
