@@ -26,7 +26,7 @@
               </ul>
             </div>
             <div class="attribute reliability">
-              <h3>Hohe Zuverlässigkeit</h3>
+              <h3>Hohe zuverlässigkeit</h3>
               <ul>
                 <li>Niedrigste Pings durch kürzeste Internet-Anbindung</li>
                 <li>Tägliche Backups + DDos Schutz</li>
@@ -84,27 +84,47 @@ p {
 }
 
 .attribute {
-  padding: 0 4em;
-  margin-bottom: 2em;
+  margin: 2em 0;
   position: relative;
+  width: 50%;
 }
 
 .attribute:before {
   content: '';
   position: absolute;
-  width: 50%;
-  height: 50%;
+  width: 50px;
+  height: 50px;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 75%;
   background-position: center;
-  top: 1em;
+  top: -2.5em;
   left: 0;
   right: 0;
   margin: auto;
+  background-color: white;
+  border-radius: 99px;
 }
 
 .attribute.management:before {
-  background-image: url('../');
+  background-image: url('../assets/images/gear.png');
+}
+
+.attribute.reliability:before {
+  background-image: url('../assets/images/security.png');
+}
+
+.attribute.flexibility:before {
+  background-image: url('../assets/images/directions.png');
+}
+
+.attribute.community:before {
+  background-image: url('../assets/images/group-users.png');
+}
+
+.attribute ul {
+  text-align: center;
+  line-height: 1.5em;
+  list-style: none;
 }
 
 .attribute h3 {
@@ -114,6 +134,10 @@ p {
 @media (max-width: 1440px) {
   .info_wrapper {
     padding: 0;
+  }
+
+  .attribute {
+    width: 100%;
   }
 }
 </style>

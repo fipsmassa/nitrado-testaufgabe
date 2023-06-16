@@ -15,7 +15,7 @@ Der Headerbereich besteht aus einem großen Promobild des Spiels. Auf diesem ist
 
 ### Serverauswahl
 
-Der Hauptbereich der App. Hier befindet sich die Tab-Komponente. Es kann zwischen verschiedenen Optionen gewählt werden. Per Default sind drei Auswahlmöglichkeiten vorhanden. Die erste Option ist standardmäßig ausgewählt. In der Tab-Komponente findet der Api-Aufruf für die Accordion-Komponente statt (also API wurde [dummyjson.com](https://dummyjson.com) verwendet). Inhaltlich sind in jedem Tab Preis, Location und weitere Infos des Servers vorhanden, sowie die Accordion-Komponente mit den Daten der Tab-spezifischen API. Auch hier befindet sich ein Call-To-Action-Button zur Auswahl des Servers.
+Der Hauptbereich der App. Hier befindet sich die Tab-Komponente. Es kann zwischen verschiedenen Optionen gewählt werden. Per Default sind drei Auswahlmöglichkeiten vorhanden. Die erste Option ist standardmäßig ausgewählt. In der Tab-Komponente findet der Api-Aufruf für die Accordion-Komponente statt (als API wurde [dummyjson.com](https://dummyjson.com) verwendet). Inhaltlich sind in jedem Tab Preis, Location und weitere Infos des Servers vorhanden, sowie die Accordion-Komponente mit den Daten der Tab-spezifischen API. Auch hier befindet sich ein Call-To-Action-Button zur Auswahl des Servers.
 
 Die verschiedenen Bilder der Tabs sollen die verschiedenen Stufen der Server darstellen.
 
@@ -48,12 +48,6 @@ npm install
 
 ```sh
 npm run dev
-```
-
-### Build
-
-```sh
-npm run build
 ```
 
 ### Unit Tests mit [Vitest](https://vitest.dev/)
