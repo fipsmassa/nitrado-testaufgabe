@@ -13,7 +13,7 @@ export default defineComponent({
       required: true
     }
   },
-  setup(props) {
+  setup() {
     const activeItem = ref<number | null>(null)
 
     const toggleItem = (index: number) => {

@@ -12,7 +12,7 @@ const scrollTo = (selector: string) => {
     <div class="container">
       <div class="flex_wrapper">
         <div class="game_text">
-          <h1>Star Wars - Battlefront 3</h1>
+          <h1>Star Wars - Battlefront 3 Multiplayer</h1>
           <p>Bald erhältlich - jetzt Server vorbestellen und als erster Spielen</p>
           <span class="call_to" @click="scrollTo('server_choice')">Hier bestellen</span>
         </div>
@@ -23,7 +23,7 @@ const scrollTo = (selector: string) => {
 
 <style scoped>
 header {
-  background-image: url(../assets/images/stormtrooper.jpeg);
+  background-image: url(../assets/images/header.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 40em;
@@ -49,5 +49,34 @@ p {
 
 .game_text {
   margin-bottom: 7em;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  header {
+    height: 10em;
+  }
+
+  .game_text {
+    padding: 1em;
+    border-radius: 10px;
+    margin-bottom: 0.5em;
+  }
+}
+
+@media (max-width: 1440px) and (min-width: 769px) {
+  header {
+    height: 30em;
+  }
+
+  h1 {
+    margin-top: 0;
+  }
+
+  .game_text {
+    padding: 1em;
+    border-radius: 10px;
+    margin-bottom: 0.5em;
+  }
 }
 </style>

@@ -51,7 +51,7 @@
           </a>
         </div>
         <div class="social">
-          <h3>Folge uns</h3>
+          <h3>Folge der Macht</h3>
           <div class="platforms">
             <a class="twitter icon" href="#">Twitter</a>
             <a class="discord icon" href="#">Discord</a>
@@ -67,7 +67,7 @@
   </footer>
 </template>
 
-<style>
+<style scoped>
 footer {
   padding: 2em 0;
   background-color: #444444;
@@ -153,5 +153,24 @@ h3 {
 
 .instagram:before {
   background-image: url('../assets/images/instagram.png');
+}
+
+@media (max-width: 768px) {
+  .footer_wrapper {
+    flex-direction: column;
+  }
+
+  .logo,
+  .platforms {
+    margin-bottom: 1.5em;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  h3 {
+    margin-bottom: 0.5em;
+  }
 }
 </style>

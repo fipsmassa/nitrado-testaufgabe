@@ -2,7 +2,6 @@
 import { ref, defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'Dropdown',
   props: {
     options: {
       type: Array as () => { title: string; text: string }[],
@@ -35,11 +34,11 @@ export default defineComponent({
 
 <template>
   <div class="dropdown">
-    <button class="dropdown-toggle" @click="toggleDropdown">
+    <button class="dropdown_toggle" @click="toggleDropdown">
       <span class="avatar"></span>
     </button>
     <Transition name="slide-fade">
-      <ul v-show="isOpen" class="dropdown-menu">
+      <ul v-show="isOpen" class="dropdown_menu" :class="{ active: isOpen }">
         <li v-for="(option, index) in options" :key="index" @click="selectOption(option)">
           {{ option.title }}
         </li>
@@ -66,7 +65,7 @@ export default defineComponent({
   display: inline-block;
 }
 
-.dropdown-toggle {
+.dropdown_toggle {
   background-color: rgba(255, 47, 0, 0.9);
   border: none;
   padding: 0.25em 0.5em;
@@ -75,7 +74,7 @@ export default defineComponent({
   color: white;
 }
 
-.dropdown-menu {
+.dropdown_menu {
   position: absolute;
   margin: 0.5em 0 0;
   top: 100%;
@@ -89,18 +88,18 @@ export default defineComponent({
   color: white;
 }
 
-.dropdown-menu li {
+.dropdown_menu li {
   padding: 0.5em 1em;
   cursor: pointer;
   box-shadow: inset 0 0 0 0 rgba(94, 17, 0, 0.9);
   transition: 0.4s ease-out;
 }
 
-.dropdown-menu li:hover {
+.dropdown_menu li:hover {
   box-shadow: inset 400px 0 0 0 rgba(94, 17, 0, 0.9);
 }
 
-.dropdown-menu.show {
+.dropdown_menu.show {
   display: block;
 }
 
@@ -116,5 +115,11 @@ export default defineComponent({
 .slide-fade-leave-to {
   transform: translateX(20px);
   opacity: 0;
+}
+
+@media (max-width: 768px) {
+  .dropdown_menu {
+    left: -2em;
+  }
 }
 </style>

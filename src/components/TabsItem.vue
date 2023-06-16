@@ -1,6 +1,6 @@
 <script lang="ts">
 import { ref, defineComponent, onMounted, watchEffect } from 'vue'
-import Accordion from '@/components/Accordion.vue'
+import AccordionItem from '@/components/AccordionItem.vue'
 
 interface Tab {
   title: string
@@ -17,7 +17,7 @@ interface Tab {
 
 export default defineComponent({
   components: {
-    Accordion
+    AccordionItem
   },
   props: {
     tabs: {
@@ -33,7 +33,7 @@ export default defineComponent({
       activeTab.value = index
     }
 
-    const fetchData = async (index: number) => {
+    const fetchData = async () => {
       try {
         const response = await fetch(props.tabs[activeTab.value].url)
         const data = await response.json()
@@ -47,11 +47,11 @@ export default defineComponent({
     }
 
     onMounted(() => {
-      fetchData(activeTab.value)
+      fetchData()
     })
 
     watchEffect(() => {
-      fetchData(activeTab.value)
+      fetchData()
     })
 
     return {
@@ -102,7 +102,7 @@ export default defineComponent({
                   </li>
                 </ul>
               </div>
-              <accordion :items="accordionItems" />
+              <AccordionItem :items="accordionItems" />
               <span class="call_to" @click="tab.buttonClick()">Jetzt auswählen</span>
             </div>
           </div>
@@ -225,5 +225,32 @@ export default defineComponent({
 .features {
   padding: 1em 2em;
   line-height: 1.5em;
+}
+
+@media (max-width: 768px) {
+  .tab_header .tab_item {
+    padding: 0.5em 1em;
+  }
+
+  .text_content {
+    padding: 2em 1em;
+    width: 100%;
+  }
+
+  .image_content {
+    display: none;
+  }
+}
+
+@media (max-width: 1440px) and (min-width: 769px) {
+  .text_content {
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    padding: 2em 0;
+  }
+
+  .content_wrapper {
+    display: block;
+  }
 }
 </style>

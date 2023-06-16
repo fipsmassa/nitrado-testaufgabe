@@ -1,15 +1,10 @@
-<script setup lang="ts">
-import TabsItem from './components/TabsItem.vue'
-import HeaderItem from './components/HeaderItem.vue'
-import NavigationItem from './components/NavigationItem.vue'
-import FooterItem from './components/FooterItem.vue'
-import ContentItem from './components/ContentItem.vue'
+import { shallowMount } from '@vue/test-utils'
+import { describe, it, expect } from 'vitest'
+import TabsItem from '@/components/TabsItem.vue'
 
-const serverSelection = () => {
-  alert('Server ausgewählt')
-}
+const serverSelection = () => console.log('clicked button')
 
-const mainTabs = [
+const tabs = [
   {
     title: '10 Slots',
     url: 'https://dummyjson.com/posts?limit=3',
@@ -59,25 +54,25 @@ const mainTabs = [
     buttonClick: serverSelection
   }
 ]
-</script>
 
-<template>
-  <NavigationItem />
-  <HeaderItem />
-  <main>
-    <h2>Wähle deinen Server</h2>
-    <TabsItem :tabs="mainTabs" />
-    <ContentItem />
-  </main>
-  <FooterItem />
-</template>
+describe('TabsItem', () => {
+  it('renders the correct number of tabs', () => {
+    const wrapper = shallowMount(TabsItem, { props: { tabs } })
+    const tabItems = wrapper.findAll('.tab_item')
+    expect(tabItems.length).toBe(tabs.length)
+  })
 
-<style scoped>
-main {
-  background-image: url(./assets/images/nightsky.jpg);
-  padding: 2em 0 6em;
-}
+  it('updates active tab on click', () => {
+    const wrapper = shallowMount(TabsItem, { props: { tabs } })
+    const secondTab = wrapper.find('.tab_item:nth-child(2)')
 
-@media (min-width: 1024px) {
-}
-</style>
+    expect(wrapper.vm.activeTab).toBe(0)
+
+    secondTab.trigger('click')
+    expect(wrapper.vm.activeTab).toBe(1)
+
+    const thirdTab = wrapper.find('.tab_item:nth-child(3)')
+    thirdTab.trigger('click')
+    expect(wrapper.vm.activeTab).toBe(2)
+  })
+})

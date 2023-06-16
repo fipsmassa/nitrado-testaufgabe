@@ -1,10 +1,10 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Dropdown from './Dropdown.vue'
+import DropdownItem from './DropdownItem.vue'
 
 export default defineComponent({
   components: {
-    Dropdown
+    DropdownItem
   },
   setup() {
     const dropdownOptions = [
@@ -69,7 +69,7 @@ export default defineComponent({
           </g>
         </svg>
       </a>
-      <Dropdown :options="dropdownOptions" />
+      <DropdownItem :options="dropdownOptions" />
     </div>
   </nav>
 </template>
@@ -105,5 +105,11 @@ nav .container {
   width: 2.5em;
   background: black;
   transform: rotate(45deg) skew(-3deg, -3deg);
+}
+
+@media (max-width: 1440px) {
+  nav {
+    padding: 0.5em 2em;
+  }
 }
 </style>
